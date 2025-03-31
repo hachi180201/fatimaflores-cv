@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fátima Castellanos</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #FFD700;
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+        }
+        .banner {
+            width: 100%;
+            height: 400px;
+            background-image: url('APOLO 3D.png');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 4px solid #FFD700;
+            margin-bottom: 30px;
+        }
+        .cv-container {
+            width: 100%;
+            max-width: 1050px;
+            text-align: center;
+            padding: 40px;
+            background-color: #000000;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        header {
+            margin-bottom: 30px;
+        }
+        header .photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 4px solid #FFD700;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7), 0 0 15px 5px rgba(0, 255, 0, 0.7), 0 0 15px 5px rgba(0, 0, 255, 0.7);
+            animation: rgb-glow 5s linear infinite;
+        }
+        header .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        header h1 {
+            font-size: 36px;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .section {
+            padding: 20px;
+            background-color: #333333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 10px 5px rgba(255, 0, 0, 0.3), 0 0 10px 5px rgba(0, 255, 0, 0.3), 0 0 10px 5px rgba(0, 0, 255, 0.3);
+            animation: rgb-glow 5s linear infinite;
+        }
+        h2 {
+            color: #FFD700;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .button-container {
+            margin-top: 40px;
+        }
+        .btn {
+            background-color: #FFD700;
+            color: #0d0d0d;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 10px 5px rgba(255, 0, 0, 0.3), 0 0 10px 5px rgba(0, 255, 0, 0.3), 0 0 10px 5px rgba(0, 0, 255, 0.3);
+            animation: rgb-glow 5s linear infinite;
+            transition: all 0.3s;
+            margin: 10px;
+        }
+        .btn:hover {
+            background-color: #0d0d0d;
+            color: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 0 0 20px 8px rgba(255, 0, 0, 0.5), 0 0 20px 8px rgba(0, 255, 0, 0.5), 0 0 20px 8px rgba(0, 0, 255, 0.5);
+            animation: rgb-glow-hover 5s linear infinite;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #FFD700;
+        }
+        progress {
+            border: 2px solid #FFD700;
+            width: 200px;
+            height: 25px;
+            background: linear-gradient(to right, #333, #444, #333);
+            background-size: 200% 100%;
+            animation: bg-move 10s linear infinite;
+            border-radius: 0px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            box-shadow: 0 0 10px #FFD700, inset 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        progress::-webkit-progress-value {
+            background: linear-gradient(to right, #FFD700, #FFD700, #ff0000, #FFD700);
+            border-radius: 0px;
+            animation: progress-glow 2s linear infinite;
+            margin-left: -2px;
+        }
+        progress::-moz-progress-bar {
+            background: linear-gradient(to right, #FFD700, #FFD700, #fbff00, #FFD700);
+            border-radius: 0px;
+            animation: progress-glow 2s linear infinite;
+            margin-left: -2px;
+        }
+        @keyframes progress-glow {
+            0% {
+                background-position: 0% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+        @keyframes bg-move {
+            0% {
+                background-position: 0% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+        .project-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #000000;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 10px 5px rgba(255, 0, 0, 0.3), 0 0 10px 5px rgba(0, 255, 0, 0.3), 0 0 10px 5px rgba(0, 0, 255, 0.3);
+            animation: rgb-glow 5s linear infinite;
+        }
+        .project-container img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FFD700;
+            color: #0d0d0d;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            background-color: #0d0d0d;
+            color: #FFD700;
+        }
+        @keyframes rgb-glow {
+            0% {
+                box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7), 0 0 15px 5px rgba(0, 255, 0, 0.7), 0 0 15px 5px rgba(0, 0, 255, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.7), 0 0 15px 5px rgba(0, 0, 255, 0.7), 0 0 15px 5px rgba(255, 0, 0, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 15px 5px rgba(0, 0, 255, 0.7), 0 0 15px 5px rgba(255, 0, 0, 0.7), 0 0 15px 5px rgba(0, 255, 0, 0.7);
+            }
+        }
+
+        @keyframes rgb-glow-hover {
+            0% {
+                box-shadow: 0 0 20px 8px rgba(255, 0, 0, 0.5), 0 0 20px 8px rgba(0, 255, 0, 0.5), 0 0 20px 8px rgba(0, 0, 255, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px 8px rgba(0, 255, 0, 0.5), 0 0 20px 8px rgba(0, 0, 255, 0.5), 0 0 20px 8px rgba(255, 0, 0, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 20px 8px rgba(0, 0, 255, 0.5), 0 0 20px 8px rgba(255, 0, 0, 0.5), 0 0 20px 8px rgba(0, 255, 0, 0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+    </div>
+
+    <div class="cv-container">
+        <header>
+            <div class="photo">
+                <img src="FATIMA CF.JPG" alt="Foto">
+            </div>
+            <h1>Fátima Castellanos (hachi)</h1>
+            <p>Estudiante de IDM | Interesada en el mundo del modelado 3D, la fotografía y la informática</p>
+        </header>
+        <section class="info">
+            <div class="section personal">
+                <h2>Información Personal</h2>
+                <p><strong>Ubicación:</strong> Ciudad del Carmen, Campeche, México</p>
+                <p><strong>Correo electrónico:</strong> fatimaflores7hye@gmail.com</p>
+            </div>
+            <div class="section skills">
+                <h2>Conocimientos</h2>
+                <ul>
+                    <li>Blender</li>
+                    <li>Microsoft Office</li>
+                    <li>C# (básico)</li>
+                </ul>
+            </div>
+            <div class="section education">
+                <h2>Educación</h2>
+                <p>Universidad Autónoma del Carmen (2023-Actual)</p>
+                <p>Escuela Preparatoria Diurna CAMPUS II (2018-2021)
+                </p>
+            </div>
+            <div class="section Certificados">
+                <h2>Certificados</h2>
+                <ul>
+                    <li><a href="#aspectosb" style="color:#FFD700">Aspectos básicos de la asistencia técnica</a></li>
+                    <li><a href="#bitsbytes" style="color:#FFD700">Los bits y bytes de las redes informáticas</a></li>
+                    <li><a href="#sistemasop" style="color:#FFD700">Sistemas operativos y tú: Convertirse en un usuario avanzado</a></li>
+                    <li><a href="#adminsistemas" style="color:#FFD700">Administración de sistemas y servicios de infraestructura de TI</a></li>
+                    <li><a href="#seguridadinfo" style="color:#FFD700">Seguridad informática: defensa contra las artes oscuras digitales</a></li>
+                </ul>
+            </div>
+            <div class="section languages">
+                <h2>Idiomas</h2>
+                <label for="file">Inglés:</label>
+                <progress id="file" max="100" value="60">60%</progress>
+            </div>
+        </section>
+        <div class="button-container">
+            <button class="btn" onclick="window.location.href='portafolio-fatima.html';">Ver Portafolio</button>
+        </div>
+        <footer>
+            <p>© 2025 Fátima Castellanos | Todos los derechos reservados</p>
+        </footer>
+
+        <div id="aspectosb" class="project-container">
+            <a href="index.html" class="back-button">← Volver</a>
+            <h1>Aspectos básicos de la asistencia técnica</h1>
+            <img src="Aspectos básicos de la asistencia técnica.jpg" alt="Proyecto 1">
+        </div>
+
+        <div id="bitsbytes" class="project-container">
+            <a href="index.html" class="back-button">← Volver</a>
+            <h1>Los bits y bytes de las redes informáticas</h1>
+            <img src="Los bits y bytes de las redes informáticas_page-0001.jpg" alt="Los bits y bytes de las redes informáticas">
+        </div>
+
+        <div id="sistemasop" class="project-container">
+            <a href="index.html" class="back-button">← Volver</a>
+            <h1>Sistemas operativos y tú: Convertirse en un usuario avanzado</h1>
+            <img src="Sistemas operativos y tú Convertirse en un usuario avanzado_page-0001.jpg" alt="Proyecto 1">
+        </div>
+
+        <div id="adminsistemas" class="project-container">
+            <a href="index.html" class="back-button">← Volver</a>
+            <h1>Administración de sistemas y servicios de infraestructura de TI</h1>
+            <img src="Administración de sistemas y servicios de infraestructura de TI_page-0001.jpg" alt="Proyecto 1">
+        </div>
+
+        <div id="seguridadinfo" class="project-container">
+            <a href="index.html" class="back-button">← Volver</a>
+            <h1>Seguridad informática: defensa contra las artes oscuras digitales</h1>
+            <img src="Seguridad informática defensa contra las artes oscuras digitales_page-0001.jpg" alt="Los bits y bytes de las redes informáticas">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Fátima Castellanos</title>
+    <style>
+        body {
+            background-color: #2e2e2e;
+            color: #FFD700;
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+        }
+        .banner {
+            width: 100%;
+            height: 400px;
+            background-image: url('APOLO 3D.png');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 4px solid #FFD700;
+            margin-bottom: 30px;
+        }
+        .cv-container {
+            width: 100%;
+            max-width: 1050px;
+            text-align: center;
+            padding: 40px;
+            background-color: #262626;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 10px 5px rgba(255, 0, 0, 0.3), 0 0 10px 5px rgba(0, 255, 0, 0.3), 0 0 10px 5px rgba(0, 0, 255, 0.3); /* Luces RGB */
+            border-radius: 10px;
+            margin-top: 30px;
+            animation: rgb-glow 5s linear infinite; /* Animación RGB */
+        }
+        h1 {
+            font-size: 36px;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .portfolio-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 10px 5px rgba(255, 0, 0, 0.3), 0 0 10px 5px rgba(0, 255, 0, 0.3), 0 0 10px 5px rgba(0, 0, 255, 0.3); /* Luces RGB */
+            cursor: pointer;
+            animation: rgb-glow 5s linear infinite; /* Animación RGB */
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FFD700;
+            color: #0d0d0d;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            background-color: #0d0d0d;
+            color: #FFD700;
+        }
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #262626;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #FFD700;
+            width: 80%;
+            border-radius: 5px;
+            position: relative;
+        }
+        .close {
+            color: #FFD700;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+        }
+        .modal-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        @keyframes rgb-glow {
+            0% {
+                box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7), 0 0 15px 5px rgba(0, 255, 0, 0.7), 0 0 15px 5px rgba(0, 0, 255, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.7), 0 0 15px 5px rgba(0, 0, 255, 0.7), 0 0 15px 5px rgba(255, 0, 0, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 15px 5px rgba(0, 0, 255, 0.7), 0 0 15px 5px rgba(255, 0, 0, 0.7), 0 0 15px 5px rgba(0, 255, 0, 0.7);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+    </div>
+
+    <div class="cv-container">
+        <a href="index.html" class="back-button">← Volver</a>
+        <h1>Mi Portafolio</h1>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="render para video.png" alt="Lata de cerveza" onclick="document.getElementById('modal1').style.display='block'">
+            </div>
+            <div class="portfolio-item">
+                <img src="10_Fatima_Castellanos_render_03.png" alt="Apolo" onclick="document.getElementById('modal2').style.display='block'">
+            </div>
+            <div class="portfolio-item">
+                <img src="tesla.png" alt="tesla" onclick="document.getElementById('modal3').style.display='block'">
+            </div>
+            <div class="portfolio-item">
+                <img src="02_Stella Maris_Luz_y_guía.jpg" alt="StellaM" onclick="document.getElementById('modal4').style.display='block'">
+            </div>
+            <div class="portfolio-item">
+                <img src="05_Fatima_Castellanos_render3.png" alt="Robot" onclick="document.getElementById('modal5').style.display='block'">
+            </div>
+            <div class="portfolio-item">
+                <img src="03_Reposo_entre_mareas.jpg" alt="Barcos" onclick="document.getElementById('modal6').style.display='block'">
+            </div>
+            <div class="portfolio-item">
+                <img src="01_Manos_del_Mar.jpg" alt="Pescador" onclick="document.getElementById('modal7').style.display='block'">
+            </div>
+        </div>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('modal1').style.display='none'">&times;</span>
+                <img src="render para video.png" alt="Lata de cerveza">
+                <p>Lata de cerveza realizada en Blender.</p>
+            </div>
+        </div>
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('modal2').style.display='none'">&times;</span>
+                <img src="10_Fatima_Castellanos_render_03.png" alt="Imagen 2">
+                <p><strong>APOLO</strong></p>
+                <p> Personaje original realizado en Blender para propuesta de la interfaz de un videojuego.</p>
+            </div>
+        </div>
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('modal3').style.display='none'">&times;</span>
+                <img src="tesla.png" alt="Imagen 3">
+                <p>Modelado 3D en Blender de un automóvil "Tesla".</p>
+            </div>
+        </div>
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('modal4').style.display='none'">&times;</span>
+                <img src="02_Stella Maris_Luz_y_guía.jpg" alt="Imagen 4">
+                <p><strong>Stella Maris en Ciudad del Carmen, Campeche</strong></p>
+                <p>
+                    La Virgen del Carmen, conocida como Stella Maris, se alza imponente frente al mar, recordándonos su papel como protectora de los navegantes. Este atardecer en el malecón combina fe y naturaleza en un contraste inolvidable.
+                </p>
+                <p>Fotografía tomada a contraluz para acentuar su omnipotencia, resaltando su silueta como un faro espiritual que guía y protege desde las alturas.
+                </p>
+            </div>
+        </div>
+        <div id="modal5" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('modal5').style.display='none'">&times;</span>
+                <img src="05_Fatima_Castellanos_render3.png" alt="Imagen 5">
+                <p>robot NO TIENE NOMBRE AÚN</p>
+            </div>
+        </div>
+        <div id="modal6" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('modal6').style.display='none'">&times;</span>
+                <img src="03_Reposo_entre_mareas.jpg" alt="Imagen 6">
+                <p><strong>"Reposo entre mareas"</strong></p>
+                <p>Dos barcos reposan junto a una vieja estructura cubierta de aves, que parecen haber reclamado el lugar como suyo. Una escena cotidiana y tranquila que refleja el ritmo pausado de la vida en Ciudad del Carmen.</p>
+            </div>
+        </div>
+        <div id="modal7" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('modal7').style.display='none'">&times;</span>
+                <img src="01_Manos_del_Mar.jpg" alt="Imagen 7">
+                <p><strong>"Manos del Mar"</strong></p>
+                <p>Bajo la sombra de una palapa en el mercado de Ciudad del Carmen, la frescura del mar se convierte en sustento, mientras la escena captura la dedicación y la conexión con la tradición pesquera. </p>
+                <p>Cada corte cuenta una historia de trabajo duro y orgullo por una herencia que se transmite con cada jornada.</p>
+            </div>
+    </div>
+</body>
+</html>
